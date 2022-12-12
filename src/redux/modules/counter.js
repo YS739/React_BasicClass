@@ -1,5 +1,20 @@
 // src/modules/counter.js
 
+const PLUS_ONE = "PLUS_ONE";
+const MiNUS_ONE = "MiNUS_ONE";
+
+export const plusOne = () => {
+  return {
+    type: PLUS_ONE,
+  };
+};
+
+export const minusOne = () => {
+  return {
+    type: MiNUS_ONE,
+  };
+};
+
 // 초기 상태값
 const initialState = {
   number: 0,
@@ -10,9 +25,9 @@ const counter = (state = initialState, action) => {
   // action을 잘 받고 있는지 확인
   console.log(action);
   switch (action.type) {
-    case "PLUS_ONE":
+    case PLUS_ONE:
       return { number: state.number + 1 };
-    case "MiNUS_ONE":
+    case MiNUS_ONE:
       return { number: state.number - 1 };
     default:
       return state;
