@@ -7,7 +7,11 @@ const initialState = {
 
 // 리듀서
 const counter = (state = initialState, action) => {
+  // action을 잘 받고 있는지 확인
+  console.log(action);
   switch (action.type) {
+    case "PLUS_ONE":
+      return { number: state.number + 1 };
     default:
       return state;
   }
