@@ -1,13 +1,16 @@
 //  style을 사용 할 수 있게 import
 import styled from "styled-components";
 
+const StContainer = styled.div`
+  display: flex;
+`;
+
 const StBox = styled.div`
   width: 100px;
   height: 100px;
   border: 3px solid ${(props) => props.borderColor};
   margin: 20px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 `;
@@ -33,7 +36,7 @@ const StyledBox = () => {
   return (
     <div>
       <hr />
-      <div style={{ width: "600px", display: "flex" }}>
+      <StContainer>
         {boxList.map((box) => (
           <StBox borderColor={box} key={box}>
             {getBoxName(box)}
@@ -45,7 +48,7 @@ const StyledBox = () => {
         color[i]
 
       }></StBox> */}
-      </div>
+      </StContainer>
       <hr />
     </div>
   );
