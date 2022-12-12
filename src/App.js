@@ -1,6 +1,7 @@
 import { useState } from "react";
+import Styled from "./components/Styled";
 
-function App() {
+const App = () => {
   const [number, setNumber] = useState(0);
   return (
     <div>
@@ -19,8 +20,9 @@ function App() {
       >
         -1
       </button>
+      <Styled />
     </div>
   );
-}
+};
 
 export default App;
