@@ -1,40 +1,30 @@
-// src/modules/counter.js
+// Action Value
+const ADD_NUMBER = "ADD_NUMBER";
 
-// action creator
-const PLUS_ONE = "PLUS_ONE";
-const MiNUS_ONE = "MiNUS_ONE";
-
-export const plusOne = () => {
+// Action Creator
+export const addNumber = (payload) => {
   return {
-    type: PLUS_ONE,
-    payload: 10,
+    type: ADD_NUMBER,
+    payload,
   };
 };
-
-export const minusOne = () => {
-  return {
-    type: MiNUS_ONE,
-  };
-};
-
-// 초기 상태값
+// Initial State
 const initialState = {
   number: 0,
 };
 
-// 리듀서
+// Reducer
 const counter = (state = initialState, action) => {
-  // action을 잘 받고 있는지 확인
-  console.log(action);
   switch (action.type) {
-    case PLUS_ONE:
-      return { number: state.number + 1 };
-    case MiNUS_ONE:
-      return { number: state.number - 1 };
+    case ADD_NUMBER: {
+      return {
+        number: state.number + action.payload,
+      };
+    }
     default:
       return state;
   }
 };
 
-// 모듈파일에서는 리듀서를 export default 한다.
+// export default reducer
 export default counter;
