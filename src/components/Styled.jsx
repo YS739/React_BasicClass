@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StBox = styled.div`
   width: 100px;
   height: 100px;
-  border: 1px solid ${(props) => props.borderColor};
+  border: 3px solid ${(props) => props.borderColor};
   margin: 20px;
 `;
 
@@ -29,6 +29,15 @@ const Styled = () => {
   return (
     <div>
       <hr />
+      {boxList.map((box) => (
+        <StBox borderColor={box}>{getBoxName(box)}</StBox>
+      ))}
+
+      {/* map 시도..ㅎ */}
+      {/* <StBox getBoxName= boxList.map((color)=>{
+        color[i]
+
+      }></StBox> */}
     </div>
   );
 };
