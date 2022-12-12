@@ -1,18 +1,21 @@
 // src/App.js
 
 import React from "react";
-import { useSelector } from "react-redux"; // import 해주세요.
+import { useSelector, useDispatch } from "react-redux"; // import 해주세요.
 
 const App = () => {
-  const counterStore = useSelector((state) => state);
-  // 이 코드와 같음!
-  //const counterStore = seSelector(function(state){
-  // return state;
-  // });
-  const number = useSelector((state) => state.counter.number);
-  console.log(counterStore);
-  console.log(number);
-  return <div></div>;
+  const dispatch = useDispatch();
+  return (
+    <div>
+      <button
+        onClick={() => {
+          dispatch({ type: "PLUS_ONE" });
+        }}
+      >
+        +1
+      </button>
+    </div>
+  );
 };
 
 export default App;
