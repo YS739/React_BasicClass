@@ -47,7 +47,6 @@ const StyledBox = () => {
       }></StBox> */}
       </div>
       <hr />
-      {/* 무한렌더링 */}
     </div>
   );
 };
