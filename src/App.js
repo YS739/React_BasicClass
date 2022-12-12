@@ -1,30 +1,20 @@
 // src/App.js
-
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { minusOne, plusOne } from "./redux/modules/counter";
+import { useState } from "react";
 
 const App = () => {
-  const dispatch = useDispatch();
-  const number = useSelector((state) => state.counter.number);
+  const [number, setNumber] = useState(0);
+
+  const onChangeHandler = (event) => {
+    const { value } = event.target;
+    setNumber(+value);
+  };
   console.log(number);
+
   return (
     <div>
-      {number}
-      <button
-        onClick={() => {
-          dispatch(plusOne());
-        }}
-      >
-        +1
-      </button>
-      <button
-        onClick={() => {
-          dispatch(minusOne());
-        }}
-      >
-        -1
-      </button>
+      <input type="number" onChange={onChangeHandler} />
+      <button>더하기</button>
+      <button>빼기</button>
     </div>
   );
 };

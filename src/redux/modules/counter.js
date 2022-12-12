@@ -1,11 +1,13 @@
 // src/modules/counter.js
 
+// action creator
 const PLUS_ONE = "PLUS_ONE";
 const MiNUS_ONE = "MiNUS_ONE";
 
 export const plusOne = () => {
   return {
     type: PLUS_ONE,
+    payload: 10,
   };
 };
 
