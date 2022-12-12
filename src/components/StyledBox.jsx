@@ -6,6 +6,10 @@ const StBox = styled.div`
   height: 100px;
   border: 3px solid ${(props) => props.borderColor};
   margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
 // 박스의 색을 배열에 담습니다.
@@ -25,21 +29,27 @@ const getBoxName = (color) => {
   }
 };
 
-const Styled = () => {
+const StyledBox = () => {
   return (
     <div>
       <hr />
-      {boxList.map((box) => (
-        <StBox borderColor={box}>{getBoxName(box)}</StBox>
-      ))}
+      <div style={{ width: "600px", display: "flex" }}>
+        {boxList.map((box) => (
+          <StBox borderColor={box} key={box}>
+            {getBoxName(box)}
+          </StBox>
+        ))}
 
-      {/* map 시도..ㅎ */}
-      {/* <StBox getBoxName= boxList.map((color)=>{
+        {/* map 시도..ㅎ */}
+        {/* <StBox getBoxName= boxList.map((color)=>{
         color[i]
 
       }></StBox> */}
+      </div>
+      <hr />
+      {/* 무한렌더링 */}
     </div>
   );
 };
 
-export default Styled;
+export default StyledBox;

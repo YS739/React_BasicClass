@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Styled from "./components/Styled";
+import StyledBox from "./components/StyledBox";
 
 const App = () => {
   const [number, setNumber] = useState(0);
@@ -20,7 +20,7 @@ const App = () => {
       >
         -1
       </button>
-      <Styled />
+      <StyledBox />
     </div>
   );
 };
