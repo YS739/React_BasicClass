@@ -1,7 +1,7 @@
 // src/pages/Works.js
 
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const data = [
   { id: 1, todo: "리액트 배우기" },
@@ -13,8 +13,11 @@ const data = [
 ];
 
 function Works() {
+  const location = useLocation();
+  console.log("location :>> ", location);
   return (
     <div>
+      <div>{`현재 페이지 : ${location.pathname.slice(1)}`}</div>
       {data.map((work) => {
         return (
           <div key={work.id}>
