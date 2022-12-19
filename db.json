@@ -4,6 +4,14 @@
       "id": 1,
       "title": "json-server",
       "content": "json-server를 배워봅시다."
+    },
+    {
+      "title": "title",
+      "id": 2
+    },
+    {
+      "title": "title",
+      "id": 3
     }
   ]
 }
