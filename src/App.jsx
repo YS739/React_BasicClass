@@ -17,6 +17,7 @@ const App = () => {
 
   const onSubmitHandler = (todo) => {
     axios.post("http://localhost:3001/todos", todo);
+    setTodos([...todos, todo]);
   };
 
   // 새롭게 추가한 삭제 버튼 이벤트 핸들러
